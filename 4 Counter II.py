@@ -39,7 +39,6 @@ calls[i] is one of "increment", "decrement" and "reset"
 
 
 class counter:
-    
     def __init__ (self, init):
         self.current = init 
         self.init = init
