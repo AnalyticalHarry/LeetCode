@@ -36,4 +36,25 @@ Constraints:
 -109 <= arr[i] <= 109
 
 """
+def filter(arr, fn):
+    result = []
+    for i, value in enumerate(arr):
+        if fn(value, i):
+            result.append(value)
+    return result
+
+#filter values greater than 10
+arr1 = [0, 10, 20, 30]
+greater_than_10 = lambda n, i: n > 10
+print(filter(arr1, greater_than_10))  
+
+#keep only the first element
+arr2 = [1, 2, 3]
+first_index = lambda n, i: i == 0
+print(filter(arr2, first_index)) 
+
+#filter where the number plus one is truthy
+arr3 = [-2, -1, 0, 1, 2]
+plus_one = lambda n, i: n + 1
+print(filter(arr3, plus_one)) 
 
