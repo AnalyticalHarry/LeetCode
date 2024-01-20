@@ -28,24 +28,21 @@ calls[i] === "call"
 """
 
 
-var createCounter = function(n) {
-    #variable to keep track of the current value
-    var current = n;
-
-    #counter function
-    var counter = function(){
+def create_counter(n):
+    #list to hold the current value.
+    current = [n]
+    #counter function.
+    def counter():
         #return the current value and increment it by 1
-        return current++;
-    };
-    #return counter function
-    return counter;
-};
+        result = current[0]
+        current[0] += 1
+        return result
+   #return counter function
+    return counter  
 
 #counter starting from 10
-const counter = createCounter(10); 
-#first call returns 10
-counter(); 
-#second call returns 11
-counter(); 
-#third call returns 12
-counter(); 
+counter = create_counter(10)  
+#first, second and third counter
+print(counter()) 
+print(counter()) 
+print(counter())  
